@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.hongge.beans.Student">
+        <property name="name" value="hxh"/>
+        <property name="age" value="18"/>
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- setter注入 -->
+    <bean id="setterDemo" class="com.hongge.beans.SetterDemo">
+        <property name="student" ref="student"/>
+    </bean>
+
+    <!-- 通过已注册bean的指定方法进行bean注册 -->
+    <!-- 例如：student已经被容器管理，此时可通过student中的方法（不需要是静态方法）完成bean注册 -->
+    <bean id="chinaFace" factory-bean="student" factory-method="chinaFace"/>
+
+    <!-- 通过静态工厂方法注册bean -->
+    <bean id="factoryMethodDemo"
+          class="com.hongge.beans.FactoryMethodDemo"
+          factory-method="generateStudent"/>
+
+
+    <!--<bean id="myClass" class="com.hongge.beans.MyClass">
+        <property name="student" ref="student"/>
+        <property name="name" value="一中"/>
+    </bean>-->
+
+    <bean class="com.hongge.beans.MyClass">
+        <property name="student" ref="student"/>
+        <property name="name" value="一中"/>
+    </bean>
+
+    <bean class="com.hongge.beans.BIGCase">
+
+    </bean>
+
+</beans>
