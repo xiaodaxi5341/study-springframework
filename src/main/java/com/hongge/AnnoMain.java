@@ -1,6 +1,6 @@
 package com.hongge;
 
-import com.hongge.beans.annoContext.CustomComponentDemo;
+import com.hongge.beans.Face;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AnnoMain {
@@ -28,8 +28,8 @@ public class AnnoMain {
         /**
          * 自定义注解
          */
-        CustomComponentDemo bean = annotationConfigApplicationContext.getBean(CustomComponentDemo.class);
-        bean.print();
+//        CustomComponentDemo bean = annotationConfigApplicationContext.getBean(CustomComponentDemo.class);
+//        bean.print();
 
         /**
          * lookup案例
@@ -54,6 +54,12 @@ public class AnnoMain {
          */
 //        Face face = annotationConfigApplicationContext.getBean(Face.class);
 //        System.out.println(face);
+
+        /**
+         * @Bean方式下的@Autowired注入
+         */
+        Face face = annotationConfigApplicationContext.getBean(Face.class);
+        System.out.println(face.getClass());
 
         /**
          * 当Resource的默认名称不是@Primary标注的bean时
