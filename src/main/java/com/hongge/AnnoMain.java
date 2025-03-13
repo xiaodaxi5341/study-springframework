@@ -65,8 +65,8 @@ public class AnnoMain {
         /**
          * @Bean方式下的@Autowired注入
          */
-        Face face = annotationConfigApplicationContext.getBean(Face.class);
-        System.out.println(face.getClass());
+//        Face face = annotationConfigApplicationContext.getBean(Face.class);
+//        System.out.println(face.getClass());
 
         /**
          * 当Resource的默认名称不是@Primary标注的bean时
