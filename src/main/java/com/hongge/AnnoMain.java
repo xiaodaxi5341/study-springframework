@@ -2,6 +2,7 @@ package com.hongge;
 
 import com.hongge.beans.annoContext.CustomComponentDemo;
 import com.hongge.beans.annoContext.propertySource.MyPropertySource;
+import com.hongge.beans.Face;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
@@ -60,6 +61,12 @@ public class AnnoMain {
          */
 //        Face face = annotationConfigApplicationContext.getBean(Face.class);
 //        System.out.println(face);
+
+        /**
+         * @Bean方式下的@Autowired注入
+         */
+        Face face = annotationConfigApplicationContext.getBean(Face.class);
+        System.out.println(face.getClass());
 
         /**
          * 当Resource的默认名称不是@Primary标注的bean时
