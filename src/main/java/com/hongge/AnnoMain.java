@@ -1,8 +1,6 @@
 package com.hongge;
 
-import com.hongge.beans.annoContext.CustomComponentDemo;
 import com.hongge.beans.annoContext.propertySource.MyPropertySource;
-import com.hongge.beans.Face;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
@@ -81,6 +79,10 @@ public class AnnoMain {
          */
         String zheshishenme = environment.getProperty("zheshishenme");
         System.out.println(zheshishenme);
+
+        /**
+         * ResolvableTypeProvider 可以在spring应对泛型擦除的情况
+         */
 
     }
 
