@@ -1,7 +1,11 @@
 package com.hongge;
 
+import com.hongge.beans.annoContext.CustomComponentDemo;
+import com.hongge.beans.annoContext.propertySource.MyPropertySource;
 import com.hongge.beans.Face;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.env.MutablePropertySources;
 
 public class AnnoMain {
 
@@ -15,6 +19,9 @@ public class AnnoMain {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
+        ConfigurableEnvironment environment = annotationConfigApplicationContext.getEnvironment();
+        MutablePropertySources propertySources = environment.getPropertySources();
+        propertySources.addFirst(new MyPropertySource());
         /**
          * bean post processor 执行顺序
          *
@@ -58,8 +65,8 @@ public class AnnoMain {
         /**
          * @Bean方式下的@Autowired注入
          */
-        Face face = annotationConfigApplicationContext.getBean(Face.class);
-        System.out.println(face.getClass());
+//        Face face = annotationConfigApplicationContext.getBean(Face.class);
+//        System.out.println(face.getClass());
 
         /**
          * 当Resource的默认名称不是@Primary标注的bean时
@@ -68,6 +75,12 @@ public class AnnoMain {
          */
 //        ResourceDemo resourceDemo = annotationConfigApplicationContext.getBean("resourceDemo", ResourceDemo.class);
 //        System.out.println(resourceDemo.getResourceFace1());
+
+        /**
+         * 自定义propertySource
+         */
+        String zheshishenme = environment.getProperty("zheshishenme");
+        System.out.println(zheshishenme);
 
     }
 
