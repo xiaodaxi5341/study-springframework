@@ -1,15 +1,15 @@
 package com.hongge;
 
-import com.hongge.beans.annoContext.CustomComponentDemo;
 import com.hongge.beans.annoContext.propertySource.MyPropertySource;
-import com.hongge.beans.Face;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
 
+import java.util.HashMap;
+
 public class AnnoMain {
 
-    protected static AnnotationConfigApplicationContext getContext(){
+    protected static AnnotationConfigApplicationContext getContext() {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
         annotationConfigApplicationContext.scan("com.hongge.beans.annoContext");
 
@@ -20,8 +20,18 @@ public class AnnoMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
         ConfigurableEnvironment environment = annotationConfigApplicationContext.getEnvironment();
+
+        /**
+         * 自定义propertySource
+         */
         MutablePropertySources propertySources = environment.getPropertySources();
-        propertySources.addFirst(new MyPropertySource());
+        HashMap<Object, Object> params = new HashMap<>();
+        params.put("h", "xh");
+        params.put("replace", "h${h}");
+        propertySources.addFirst(new MyPropertySource("这里可以自己传值来设置属性", params));
+        String zheshishenme = environment.getProperty("replace");
+        System.out.println(zheshishenme);
+
         /**
          * bean post processor 执行顺序
          *
@@ -76,11 +86,7 @@ public class AnnoMain {
 //        ResourceDemo resourceDemo = annotationConfigApplicationContext.getBean("resourceDemo", ResourceDemo.class);
 //        System.out.println(resourceDemo.getResourceFace1());
 
-        /**
-         * 自定义propertySource
-         */
-        String zheshishenme = environment.getProperty("zheshishenme");
-        System.out.println(zheshishenme);
+
 
     }
 
