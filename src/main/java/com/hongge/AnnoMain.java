@@ -88,6 +88,10 @@ public class AnnoMain {
 
 
 
+        /**
+         * ResolvableTypeProvider 可以在spring应对泛型擦除的情况
+         */
+
     }
 
 }
