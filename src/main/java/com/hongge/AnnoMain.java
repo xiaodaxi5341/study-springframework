@@ -86,11 +86,6 @@ public class AnnoMain {
 //        ResourceDemo resourceDemo = annotationConfigApplicationContext.getBean("resourceDemo", ResourceDemo.class);
 //        System.out.println(resourceDemo.getResourceFace1());
 
-        /**
-         * 自定义propertySource
-         */
-        String zheshishenme = environment.getProperty("zheshishenme");
-        System.out.println(zheshishenme);
 
         /**
          * ResolvableTypeProvider 可以在spring应对泛型擦除的情况
