@@ -7,7 +7,7 @@ import org.springframework.core.env.MutablePropertySources;
 
 public class AnnoMain {
 
-    protected static AnnotationConfigApplicationContext getContext(){
+    public static AnnotationConfigApplicationContext getContext(){
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
         annotationConfigApplicationContext.scan("com.hongge.beans.annoContext");
 
