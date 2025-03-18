@@ -2,6 +2,8 @@ package com.hongge.beans.annoContext.propertySource;
 
 import org.springframework.core.env.PropertySource;
 
+import java.util.Map;
+
 public class MyPropertySource extends PropertySource {
     public MyPropertySource(String name, Object source) {
         super(name, source);
@@ -17,7 +19,8 @@ public class MyPropertySource extends PropertySource {
     }
 
     @Override
-    public Object getProperty(String name) {
-        return "zheshishenme";
+    public Object getProperty(String key) {
+        Map params = (Map) this.source;
+        return params.get(key);
     }
 }
