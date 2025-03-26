@@ -12,6 +12,7 @@ public class Main {
 
         System.out.println(bean.getTeacher());
         System.out.println(bean.getCoach());
+        System.out.println(bean.getNumber());
     }
 
 }

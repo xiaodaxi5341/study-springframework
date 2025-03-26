@@ -14,5 +14,7 @@ public class Demo {
     private Teacher teacher;
     @Value("lh,工作事件老长了")
     private Coach coach;
+    @Value("18888")
+    private int number;
 
 }
