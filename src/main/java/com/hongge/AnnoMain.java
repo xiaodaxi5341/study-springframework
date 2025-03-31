@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class AnnoMain {
 
-    protected static AnnotationConfigApplicationContext getContext() {
+    public static AnnotationConfigApplicationContext getContext(){
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
         annotationConfigApplicationContext.scan("com.hongge.beans.annoContext");
 
@@ -85,7 +85,6 @@ public class AnnoMain {
          */
 //        ResourceDemo resourceDemo = annotationConfigApplicationContext.getBean("resourceDemo", ResourceDemo.class);
 //        System.out.println(resourceDemo.getResourceFace1());
-
 
 
         /**
