@@ -6,9 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.scan("com.hongge.beans.annoContext.validator");
-        context.refresh();
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+//        context.scan("com.hongge.beans.annoContext.validator");
+//        context.refresh();
 //        Person person = new Person();
 //        person.setName("hxh");
 //        person.setAge(-1);
@@ -16,15 +16,15 @@ public class Main {
 //        new PersonValidator().validate(person, personobj);
 //        System.out.println(personobj);
 
-        MyService service = context.getBean(MyService.class);
+//        MyService service = context.getBean(MyService.class);
 //        service.validate(new PersonForm("hxh", 1));
 //        System.out.println("success");
-        service.validate(new PersonForm("hxh", -1));
-        System.out.println("success");
-        service.validate(new PersonForm("hxhasdfsdfsadf", 1));
-        System.out.println("success");
-        service.validate(new PersonForm("hxhasdfsdfsadf", -21));
-        System.out.println("success");
+//        service.validate(new PersonForm("hxh", -1));
+//        System.out.println("success");
+//        service.validate(new PersonForm("hxhasdfsdfsadf", 1));
+//        System.out.println("success");
+//        service.validate(new PersonForm("hxhasdfsdfsadf", -21));
+//        System.out.println("success");
         /**
          * 复杂对象的校验
          */
