@@ -9,9 +9,13 @@ import java.util.HashMap;
 
 public class AnnoMain {
 
-    public static AnnotationConfigApplicationContext getContext(){
+    public static AnnotationConfigApplicationContext getContext() {
+        return getContext("com.hongge.beans.annoContext");
+    }
+
+    public static AnnotationConfigApplicationContext getContext(String packageName) {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext();
-        annotationConfigApplicationContext.scan("com.hongge.beans.annoContext");
+        annotationConfigApplicationContext.scan(packageName);
 
         annotationConfigApplicationContext.refresh();
         return annotationConfigApplicationContext;

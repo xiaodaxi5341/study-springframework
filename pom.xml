@@ -17,6 +17,21 @@
 
 
     <dependencies>
+
+        <!-- Spring AOP -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version> <!-- 使用适合的版本 -->
+        </dependency>
+
+        <!-- AspectJ 支持 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.7</version> <!-- 使用适合的版本 -->
+        </dependency>
+
         <!-- Hibernate Validator -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
