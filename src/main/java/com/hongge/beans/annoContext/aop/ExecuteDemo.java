@@ -1,16 +1,15 @@
 package com.hongge.beans.annoContext.aop;
 
-import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ExecuteDemo {
 
     public void execute() {
-        ExecuteDemo executeDemo = (ExecuteDemo) (AopContext.currentProxy());
+//        ExecuteDemo executeDemo = (ExecuteDemo) (AopContext.currentProxy());
         // private不会被aop增强
-        executeDemo.internalExecute();
-        executeDemo.execute2();
+//        executeDemo.internalExecute();
+//        executeDemo.execute2();
     }
 
     public void execute2() {
@@ -19,6 +18,10 @@ public class ExecuteDemo {
 
     private void internalExecute() {
         System.out.println("internalExecute");
+    }
+
+    public void executeWithArg(Object object){
+
     }
 
 }
