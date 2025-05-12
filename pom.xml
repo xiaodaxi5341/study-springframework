@@ -59,6 +59,13 @@
             <version>2.2.224</version>
         </dependency>
 
+        <!-- mysql 数据库 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+
         <!-- 事务 -->
         <dependency>
             <groupId>org.springframework</groupId>
