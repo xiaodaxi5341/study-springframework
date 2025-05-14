@@ -1,0 +1,15 @@
+package com.hongge.beans.xmlContext.tx.jdbcClient;
+
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
+public class Actor {
+
+    private Integer actorId;
+    private String firstName;
+    private String lastName;
+    private Date lastUpdate;
+
+}

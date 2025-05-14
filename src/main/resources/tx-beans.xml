@@ -29,7 +29,8 @@
     <!-- ensure that the above transactional advice runs for any execution
         of an operation defined by the FooService interface -->
     <aop:config>
-        <aop:pointcut id="fooServiceOperation" expression="execution(* com.hongge.beans.xmlContext.tx.FooService.*(..))"/>
+        <aop:pointcut id="fooServiceOperation"
+                      expression="execution(* com.hongge.beans.xmlContext.tx.FooService.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
     </aop:config>
 
@@ -46,6 +47,9 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <!-- other <bean/> definitions here -->
+    <!-- jdbcClient -->
+    <bean id="jdbcClient" class="org.springframework.jdbc.core.simple.JdbcClient" factory-method="create">
+        <constructor-arg ref="dataSource"/>
+    </bean>
 
 </beans>
