@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class Person {
 
+    private int cardId;
     private String name;
     private int age;
 
