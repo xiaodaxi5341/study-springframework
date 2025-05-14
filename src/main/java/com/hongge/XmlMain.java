@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class XmlMain {
 
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("classpath:my-beans.xml");
+        AbstractApplicationContext context = getAbstractApplicationContext();
         SetterDemo setterDemo = context.getBean("setterDemo", SetterDemo.class);
         System.out.println(setterDemo);
 //        MyClass myClass = context.getBean("myClass", MyClass.class);
@@ -23,6 +23,11 @@ public class XmlMain {
 //        System.out.println(chinaFace);
 
 
+    }
+
+    public static AbstractApplicationContext getAbstractApplicationContext() {
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("classpath:my-beans.xml");
+        return context;
     }
 
 }
