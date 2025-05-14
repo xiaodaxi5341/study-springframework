@@ -1,8 +1,14 @@
 package com.hongge.beans.annoContext.validator;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Person {
 
     private String name;
