@@ -17,6 +17,11 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+        </dependency>
 
         <!-- 响应式数据库 -->
         <dependency>
